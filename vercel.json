@@ -1,0 +1,14 @@
+{
+  "//": "FICHIER : vercel.json — Indique à Vercel comment construire et router le projet.",
+  "//builds": "Deux builds : le backend serverless (api/) et le frontend statique (dist/).",
+  "//routes": "Toute URL /api/* va vers le backend, tout le reste va vers le SPA React.",
+  "version": 2,
+  "builds": [
+    { "src": "api/index.js",  "use": "@vercel/node" },
+    { "src": "package.json",  "use": "@vercel/static-build", "config": { "distDir": "dist" } }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/index.js" },
+    { "src": "/(.*)",     "dest": "/index.html" }
+  ]
+}
