@@ -1,0 +1,7 @@
+/* ============================================================
+   FICHIER : src/index.css
+   RÔLE   : Injecte Tailwind dans l'application.
+   ============================================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
